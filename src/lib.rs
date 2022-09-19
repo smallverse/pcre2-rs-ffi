@@ -1,4 +1,5 @@
 use core::ffi::c_void;
+use std::collections::HashSet;
 
 const PCRE2_UCP: u32 = 0x00020000;
 const PCRE2_UTF: u32 = 0x00080000;
@@ -87,24 +88,29 @@ pub fn match_next(pattern: &str, target: &str, startoffset: &mut usize) -> (usiz
     }
 }
 
-/// Match all
-pub fn match_all(pattern: &str, target: &str) {
+/// match_all
+pub fn match_all(pattern: &str, target: &str) -> HashSet<String> {
     let mut startoffset = 0;
-
+    let mut res = HashSet::new();
     while startoffset < target.len() {
         let (begin, end) = match_next(pattern, target, &mut startoffset);
         if begin == 0 && end == 0 {
             break;
         }
-        //print_matched(target, begin, &mut end);
+
         if end < target.len() {
             startoffset = end;
         }
+
+        // print_matched
+        let re = print_matched(target, begin, &mut startoffset);
+        res.insert(re);
     }
+    res
 }
 
 #[allow(unused)]
-fn print_matched(target: &str, begin: usize, end: &mut usize) {
+fn print_matched(target: &str, begin: usize, end: &mut usize) -> String {
     let mut right_index = *end;
     for i in (begin + 4)..*end {
         if i - (begin + 4) < 3 {
@@ -114,22 +120,24 @@ fn print_matched(target: &str, begin: usize, end: &mut usize) {
             right_index = i;
             break;
         }
-
-        println!("{}", &target[(begin + 4)..i]);
     }
     *end = right_index;
+
+    let re = &target[(begin + 4)..*end];
+    println!("------print_matched:{}", re);
+
+    re.to_string()
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::{match_all};
+    use crate::match_all;
 
-   
     #[test]
     fn test_match_all() {
         let pattern = r"(\d{4})([^\d\s]{3,11})((.|\n)+)";
         let target = "a;jhgoqoghqoj0329 u0tyu10hg0h9Y0Y9827342482y(Y0y(G)_)lajf;lqjfgqhgpqjopjqa=)*(^!@#$%^&*())9999999a;jhgoqoghqoj0329 u0tyu10hg0h9Y0Y9827342482y(Y0y(G)_)lajf;lqjfgqhgpqjopjqa=)*(^!@#$%^&*())9999999";
 
-        match_all(pattern, target);
+        let res = match_all(pattern, target);
     }
 }
