@@ -92,7 +92,7 @@ pub fn match_all(pattern: &str, target: &str) {
     let mut startoffset = 0;
 
     while startoffset < target.len() {
-        let (begin, mut end) = match_next(pattern, target, &mut startoffset);
+        let (begin, end) = match_next(pattern, target, &mut startoffset);
         if begin == 0 && end == 0 {
             break;
         }
@@ -122,41 +122,9 @@ fn print_matched(target: &str, begin: usize, end: &mut usize) {
 
 #[cfg(test)]
 mod tests {
-    use crate::{match_all, match_next};
+    use crate::{match_all};
 
-    #[test]
-    fn test_match_next() {
-        let pattern = r"(\d{4})([^\d\s]{3,11})((.|\n)+)";
-        let target = "a;jhgoqoghqoj0329 u0tyu10hg0h9Y0Y9827342482y(Y0y(G)_)lajf;lqjfgqhgpqjopjqa=)*(^!@#$%^&*())9999999";
-        let mut startoffset = 0;
-
-        let (begin, end) = match_next(pattern, target, &mut startoffset);
-        assert_eq!(39, begin);
-        assert_eq!(97, end);
-    }
-
-    #[test]
-    fn test_match_next_2() {
-        let pattern = r"^\d{4}";
-        let target = "2022abc";
-        let mut startoffset = 0;
-
-        let (begin, end) = match_next(pattern, target, &mut startoffset);
-        assert_eq!(0, begin);
-        assert_eq!(4, end);
-    }
-
-    #[test]
-    fn test_unmatch() {
-        let pattern = r"\d$";
-        let target = "1abcd";
-        let mut startoffset = 0;
-
-        let (begin, end) = match_next(pattern, target, &mut startoffset);
-        assert_eq!(0, begin);
-        assert_eq!(0, end);
-    }
-
+   
     #[test]
     fn test_match_all() {
         let pattern = r"(\d{4})([^\d\s]{3,11})((.|\n)+)";
