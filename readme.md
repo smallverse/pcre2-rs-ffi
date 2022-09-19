@@ -14,11 +14,12 @@ cp -r ./build ./pcre2
 ```
 
 # 2 run
+## 2.1 run udp
 ```
-### 1 run udp
 ./recv_udp.sh 
-
-### 2 run main
+```
+## 2.2 run main
+```
 cargo run --package pcre2-rs-ffi --bin pcre2-rs-ffi 
 
 ```
