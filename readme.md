@@ -13,10 +13,20 @@ cp -r ./build ./pcre2
 
 ```
 
-# 2 test
+# 2 run
 ```
-cd pcre2-master
-mkdir build
-cd build && cmake ../ && make
+### 1 run udp
+./recv_udp.sh 
+
+### 2 run main
+cargo run --package pcre2-rs-ffi --bin pcre2-rs-ffi 
 
 ```
+
+# 3 test
+```
+### cargo test
+cargo test --package pcre2-rs-ffi --lib -- tests::test_match_all --exact --nocapture
+
+```
+
