@@ -4,13 +4,9 @@
 
 ---
 
-# 1 build pcre2-master 
+# 1 build pcre2-master:build_pcre2.sh
 ```
-cd pcre2-master
-mkdir build
-cd build && cmake ../ && make
-cd -
-cp -r ./build ./pcre2
+./build_pcre2.sh
 
 ```
 

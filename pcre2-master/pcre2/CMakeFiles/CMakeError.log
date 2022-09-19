@@ -1,0 +1,98 @@
+Determining if the include file windows.h exists failed with the following output:
+Change Dir: /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ac293/fast && /usr/bin/make -f CMakeFiles/cmTC_ac293.dir/build.make CMakeFiles/cmTC_ac293.dir/build
+make[1]: Entering directory '/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ac293.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ac293.dir/CheckIncludeFile.c.o   -c /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: windows.h: No such file or directory
+    1 | #include <windows.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_ac293.dir/build.make:66: CMakeFiles/cmTC_ac293.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_ac293/fast] Error 2
+
+
+
+Determining if the memfd_create exist failed with the following output:
+Change Dir: /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_68163/fast && /usr/bin/make -f CMakeFiles/cmTC_68163.dir/build.make CMakeFiles/cmTC_68163.dir/build
+make[1]: Entering directory '/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_68163.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_68163.dir/CheckSymbolExists.c.o   -c /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘memfd_create’ undeclared (first use in this function)
+    8 |   return ((int*)(&memfd_create))[argc];
+      |                   ^~~~~~~~~~~~
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTC_68163.dir/build.make:66: CMakeFiles/cmTC_68163.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_68163/fast] Error 2
+
+
+File /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/mman.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memfd_create
+  return ((int*)(&memfd_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the secure_getenv exist failed with the following output:
+Change Dir: /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ddd77/fast && /usr/bin/make -f CMakeFiles/cmTC_ddd77.dir/build.make CMakeFiles/cmTC_ddd77.dir/build
+make[1]: Entering directory '/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ddd77.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ddd77.dir/CheckSymbolExists.c.o   -c /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘secure_getenv’ undeclared (first use in this function)
+    8 |   return ((int*)(&secure_getenv))[argc];
+      |                   ^~~~~~~~~~~~~
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTC_ddd77.dir/build.make:66: CMakeFiles/cmTC_ddd77.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_ddd77/fast] Error 2
+
+
+File /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef secure_getenv
+  return ((int*)(&secure_getenv))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test HAVE_ATTRIBUTE_UNINITIALIZED failed with the following output:
+Change Dir: /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1374e/fast && /usr/bin/make -f CMakeFiles/cmTC_1374e.dir/build.make CMakeFiles/cmTC_1374e.dir/build
+make[1]: Entering directory '/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1374e.dir/src.c.o
+/usr/bin/cc   -DHAVE_ATTRIBUTE_UNINITIALIZED  -Werror   -o CMakeFiles/cmTC_1374e.dir/src.c.o   -c /mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/src.c
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp/src.c:1:1: error: ‘uninitialized’ attribute directive ignored [-Werror=attributes]
+    1 | int main() { char buf[128] __attribute__((uninitialized)); (void)buf; return 0; }
+      | ^~~
+cc1: all warnings being treated as errors
+make[1]: *** [CMakeFiles/cmTC_1374e.dir/build.make:66: CMakeFiles/cmTC_1374e.dir/src.c.o] Error 1
+make[1]: Leaving directory '/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_1374e/fast] Error 2
+
+
+Source file was:
+int main() { char buf[128] __attribute__((uninitialized)); (void)buf; return 0; }
