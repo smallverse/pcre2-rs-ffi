@@ -136,8 +136,11 @@ mod tests {
     #[test]
     fn test_match_all() {
         let pattern = r"(\d{4})([^\d\s]{3,11})((.|\n)+)";
-        let target = "a;jhgoqoghqoj0329 u0tyu10hg0h9Y0Y9827342482y(Y0y(G)_)lajf;lqjfgqhgpqjopjqa=)*(^!@#$%^&*())9999999a;jhgoqoghqoj0329 u0tyu10hg0h9Y0Y9827342482y(Y0y(G)_)lajf;lqjfgqhgpqjopjqa=)*(^!@#$%^&*())9999999";
+        let target = "a;jhgoqoghqoj0329 u0tyu10hg0h9Y0Y9827342482y(Y0y(G)_)lajf;lqjfgqhgpqjopjqa=)*(^!@#$%^&*())9999999";
 
         let res = match_all(pattern, target);
+        for s in res.iter() {
+            println!("------re {}", s);
+        }
     }
 }
