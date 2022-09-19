@@ -1,5 +1,6 @@
-**build by ubuntu(WSL2)**
-> 理论下mac也可行
+**Build By Ubuntu(WSL2)**
+> Theoretically macos is also feasible
+
 
 ---
 
