@@ -1,0 +1,11 @@
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/install/strip.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/install.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/list_install_components.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/edit_cache.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/test.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/pcre2test.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/install/local.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/pcre2grep.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/pcre2-posix-static.dir
+/mnt/c/resources/zhaijf/pcre2-rs-ffi/pcre2-master/build/CMakeFiles/pcre2-8-static.dir
